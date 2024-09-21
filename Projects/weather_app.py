@@ -1,7 +1,7 @@
 import requests
 import pprint
 def get_weather(city):
-    api_key = 'befc3e38d3b14341a1192838242009'  # Replace with your actual API key
+    api_key = 'Api_key'  # Replace with your actual API key of weatherapi.com
     base_url = f'http://api.weatherapi.com/v1/current.json?key={api_key}&q={city}'
 
     response = requests.get(base_url)
@@ -14,11 +14,11 @@ def get_weather(city):
         print(location['country'])
         print(current['condition'])
         # pprint.pprint(response.json())
-        # print(f"Weather in {location['name']}, {location['region']}, {location['country']}:")
-        # print(f"Temperature: {current['temp_c']}°C")
-        # print(f"Condition: {current['condition']['text']}")
-        # print(f"Humidity: {current['humidity']}%")
-        # print(f"Wind Speed: {current['wind_kph']} km/h")
+        print(f"Weather in {location['name']}, {location['region']}, {location['country']}:")
+        print(f"Temperature: {current['temp_c']}°C")
+        print(f"Condition: {current['condition']['text']}")
+        print(f"Humidity: {current['humidity']}%")
+        print(f"Wind Speed: {current['wind_kph']} km/h")
     else:
         print(f"Error: {response.json().get('error', {}).get('message', 'An error occurred.')}")
 
